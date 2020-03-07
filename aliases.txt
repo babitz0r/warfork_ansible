@@ -1,0 +1,19 @@
+#lazy directory switch
+alias cdwfs="cd ~/steamcmd/warfork/Warfork.app/Contents/Resources/"
+
+#server running
+alias wfsnw="cdwfs; ./wf_server.x86_64 +exec normal.cfg"
+alias wfsig="cdwfs; ./wf_server.x86_64 +exec insta.cfg"
+alias wfspriv="cdwfs; ./wf_server.x86_64 +exec priv.cfg"
+alias wfsduel1="cdwfs; ./wf_server.x86_64 +exec duel1.cfg"
+alias wfsduel2="cdwfs; ./wf_server.x86_64 +exec duel2.cfg"
+
+#screens
+alias snw="screen -d -m -S wfsnormal; screen -S wfsnormal -X stuff "wfsnw^M"; screen -S wfsnormal -X stuff "heartbeat^M""
+alias sig="screen -d -m -S wfsinsta; screen -S wfsinsta -X stuff "wfsig^M"; screen -S wfsinsta -X stuff "heartbeat^M""
+alias spriv="screen -d -m -S wfsprivate; screen -S wfsprivate -X stuff "wfspriv^M"; screen -S wfsprivate -X stuff "heartbeat^M""
+alias sduel1="screen -d -m -S wfsduelone; screen -S wfsduelone -X stuff "wfsduel1^M"; screen -S wfsduelone -X stuff "heartbeat^M""
+alias sduel2="screen -d -m -S wfsdueltwo; screen -S wfsdueltwo -X stuff "wfsduel2^M"; screen -S wfsdueltwo -X stuff "heartbeat^M""
+
+#one command to rule them all
+alias wfsall="snw; sleep 1; sig; sleep 1; spriv; sleep 1; sduel1; sleep 1; sduel2" 
