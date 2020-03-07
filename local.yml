@@ -29,7 +29,7 @@
     - name: install / update warfork
       become: true
       become_user: steam
-      shell: ~/steamcmd.sh +force_install_dir /warfork/ +login anonymous +app_update 1136510 +quit
+      shell: ~/steamcmd.sh +force_install_dir ./warfork/ +login anonymous +app_update 1136510 +quit
 
     - name: copy the configs over
       become: true
