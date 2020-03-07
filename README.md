@@ -40,4 +40,4 @@ wfupdate - will update the game
 
 With a bit of common sense + trial and error you can easily tweak everything to your liking.
 
-If you need any help setting up your WF server(s), you can find me in the game's official discord or just message Babitz#4571
+If you need any help setting up your WF server(s), you can find me in the game's official discord or just message Babitz#4571 on discord.
