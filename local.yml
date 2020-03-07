@@ -2,10 +2,10 @@
 - hosts: all
   tasks:
     - name: Install deps and other needed stuff
-        apt:
-          pkg:
-          - screen
-          - lib32gcc1
+      apt:
+        pkg:
+        - screen
+        - lib32gcc1
 
     - name: add the steam user
       user:
