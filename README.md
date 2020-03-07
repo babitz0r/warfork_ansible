@@ -3,14 +3,12 @@ A repo with my warfork server configuration. Just automating stuff
 
 For Debian based servers only, for now.
 
-Requirements:
-git
-ansible
+Requirements: git, ansible
 
-Basically just do
-apt install git ansible
+Basically just do "apt install git ansible" as root.
 
 And then use
+
 ansible-pull -U https://github.com/babitz0r/warfork_ansible
 
 This will automatically create a steam user, download steamcmd, install warfork and put in my custom config templates as well as add aliases so you can have commands for launching servers and updating warfork.
