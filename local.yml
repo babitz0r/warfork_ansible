@@ -6,6 +6,7 @@
         pkg:
         - screen
         - lib32gcc1
+        - git
 
     - name: add the steam user
       user:
@@ -13,30 +14,34 @@
         shell: /bin/bash
 
     - name: download steamcmd for linux
-      remote_user: steam
+      become: true
+      become_user: steam 
       get_url:
         url: https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
-        dest: ~/
+        dest: /home/steam/
         mode: 0644
 
     - name: extract steamcmd
-      remote_user: steam
-      unarchive: src=~/steamcmd_linux.tar.gz dest=~ copy=no owner=steam mode=0755
+      become: true
+      become_user: steam
+      unarchive: src=~/steamcmd_linux.tar.gz dest=~ copy=no owner=steam group=steam mode=0755
 
     - name: install / update warfork
-      remote_user: steam
+      become: true
+      become_user: steam
       shell: ~/steamcmd.sh +force_install_dir /warfork/ +login anonymous +app_update 1136510 +quit
 
     - name: copy the configs over
-      remote_user: steam
+      becoome: true
+      become_user: steam
       copy: src={{item}} dest=~/warfork/Warfork.app/Contents/Resources/basewf owner=steam group=steam mode=0644
       with_fileglob:
       - configs/*
 
     - name: copy the aliases.txt over
-      remote_user: steam
+      become: true
+      become_user: steam
       copy: src=aliases.txt dest=~ owner=steam group=steam mode=0644
 
     - name: append aliases.txt to .bashrc
-      remote_user: steam
-      command: cat ~/aliases.txt >> ~/.bashrc 
+      command: cat /home/steam/aliases.txt >> /home/steam/.bashrc 
