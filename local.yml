@@ -32,7 +32,7 @@
       shell: ~/steamcmd.sh +force_install_dir /warfork/ +login anonymous +app_update 1136510 +quit
 
     - name: copy the configs over
-      becoome: true
+      become: true
       become_user: steam
       copy: src={{item}} dest=~/warfork/Warfork.app/Contents/Resources/basewf owner=steam group=steam mode=0644
       with_fileglob:
