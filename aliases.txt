@@ -1,5 +1,5 @@
 #lazy directory switch
-alias cdwfs="cd ~/steamcmd/warfork/Warfork.app/Contents/Resources/"
+alias cdwfs="cd ~/warfork/Warfork.app/Contents/Resources/"
 
 #server running
 alias wfsnw="cdwfs; ./wf_server.x86_64 +exec normal.cfg"
@@ -16,4 +16,7 @@ alias sduel1="screen -d -m -S wfsduelone; screen -S wfsduelone -X stuff "wfsduel
 alias sduel2="screen -d -m -S wfsdueltwo; screen -S wfsdueltwo -X stuff "wfsduel2^M"; screen -S wfsdueltwo -X stuff "heartbeat^M""
 
 #one command to rule them all
-alias wfsall="snw; sleep 1; sig; sleep 1; spriv; sleep 1; sduel1; sleep 1; sduel2" 
+alias wfsall="snw; sleep 1; sig; sleep 1; spriv; sleep 1; sduel1; sleep 1; sduel2"
+
+#update wf
+alias wfupdate="cd ~ && ./steamcmd.sh +force_install_dir ./warfork/ +login anonymous +app_update 1136510 +quit" 
