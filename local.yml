@@ -2,14 +2,12 @@
 - hosts: all
   tasks:
     - name: Install deps and other needed stuff
-        remote_user: root
         apt:
           pkg:
           - screen
           - lib32gcc1
 
     - name: add the steam user
-      remote_user: root
       user:
         name: steam
         shell: /bin/bash
