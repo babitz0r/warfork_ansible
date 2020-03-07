@@ -6,7 +6,7 @@
         pkg:
         - screen
         - lib32gcc1
-        - git
+        - psmisc 
 
     - name: add the steam user
       user:
@@ -44,4 +44,6 @@
       copy: src=aliases.txt dest=~ owner=steam group=steam mode=0644
 
     - name: append aliases.txt to .bashrc
-      command: cat /home/steam/aliases.txt >> /home/steam/.bashrc 
+      blockinfile:
+        block: "{{ lookup('file', '/home/steam/aliases.txt') }}"
+        dest: /home/steam/.bashrc
